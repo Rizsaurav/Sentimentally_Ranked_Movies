@@ -1,0 +1,293 @@
+/* 🔥 Global Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #242424;
+  color: #fff;
+  text-align: center;
+}
+
+/* 🔥 Parallax Background */
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y; /* ✅ Repeat the background */
+  z-index: -1;
+  opacity: 0.5; /* Dimming Effect */
+  animation: moveBackground 20s linear infinite;
+}
+
+/* 🎥 Smooth Background Scroll Effect */
+@keyframes moveBackground {
+  from {
+    background-position: center top;
+  }
+  to {
+    background-position: center bottom;
+  }
+}
+
+
+
+/* 🎬 Cinematic Title */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+.cinematic-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;  /* ✅ Premium Cinematic Font */
+  color: #eb1736;  /* ✅ Solid red */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* ✅ More depth */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+/* 🎬 Cinematic Title */
+/* 🎬 Cinematic Title */
+.cinematic-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #eb1736;  /* ✅ Solid red, no gradient */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* ✅ Adds depth */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+/* 🔎 Search Section */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ✅ Centers it vertically */
+  height: 70vh; /* ✅ Pushes it lower towards the center */
+  margin-top: 50px; /* ✅ Extra spacing from navbar */
+}
+
+
+/* 🔎 Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #7575dd;
+  border-radius: 50px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5); /* ✅ More transparency */
+  padding: 10px 20px;
+  width: 600px; /* ✅ Wide & polished */
+  height: 60px; /* ✅ Set fixed height */
+  transition: 0.3s ease-in-out;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  background: transparent;
+  color: #fff;
+}
+
+/* 🔍 Search Button */
+.search-bar button {
+  background: #eb1736;
+  border: none;
+  cursor: pointer;
+  width: 70px;  /* ✅ Adjusted width */
+  height: 60px; /* ✅ Matches input field */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px; /* ✅ Seamless curve */
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  background: #d12c2c;
+}
+
+/* 🔍 Search Icon */
+.search-bar button img {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* 🔥 Subtitle */
+.search-subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}
+
+
+/* 🎬 Movie Grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 50px;
+}
+
+/* 🎞️ Movie Card - Ensure it contains genre tags */
+.movie-card {
+  position: relative;  /* Ensure genre tags stay inside */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🎭 Genre Tags - Confined Inside Movie Card */
+.genre-tags {
+  position: absolute;
+  top: 8px;
+  right: 8px; /* Keeps them aligned to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.movie-card p {
+  font-size: 1rem;
+  color: #eb1736;
+}
+
+/* 🎭 Error Message */
+.error {
+  color: #eb1736;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* 🔥 Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+  .cinematic-title {
+    font-size: 2rem;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* 🎬 Improved Transparent Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(235, 23, 54, 0.65); /* ✅ Slightly more transparent */
+  backdrop-filter: blur(10px); /* ✅ Keeps smooth glass effect */
+  width: calc(100vw - 0px); /* ✅ Ensures it fits without overflow */
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* ✅ Subtle Depth */
+  box-sizing: border-box;
+}
+
+
+/* ✅ Prevent Horizontal Overflow */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden; /* ✅ Stops horizontal scrolling */
+  box-sizing: border-box;
+}
+
+
+/* 🎬 Navbar Links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 20px;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+/* 🎬 Hover Effect */
+.navbar a:hover {
+  color: #f5c518; /* ✅ Subtle Golden Tint */
+}
+
+
+
+/* 🎭 Genre Tags */
+.genre-tags {
+  position: absolute;
+  top: 8px;
+  right: 8px; /* Aligns all tags to the right */
+  display: flex;
+  flex-direction: column; /* Stacks tags vertically */
+  align-items: flex-end; /* Ensures right alignment */
+  gap: 4px;
+}
+
+/* 🎟️ Individual Genre Tag */
+.genre-tag {
+  background: #a67c52; /* Darker Brown */
+  color: #ffffff; /* White Text */
+  font-size: 0.7rem; /* Slightly Smaller */
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  text-align: right; /* Aligns text properly */
+}
+
+/* ✨ Subtle Hover Effect */
+.genre-tag:hover {
+  background: #8c6239; /* Even Darker Brown */
+  transform: scale(1.1);
+}
+
+
